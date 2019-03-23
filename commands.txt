@@ -1,11 +1,30 @@
+
 mkdir ...-> create directories
 cd ...->Enter to a directory
 ls -> list directory content
 
+*To Create and upload repo info
+
 git init -> Init .git directory
-git remote add origin ... -> Add origin to the initialized directory
+git remote add origin "url" -> Add origin to the initialized directory
 git status-> If exist any change (red coloured)
 git add . -> Add everything in the directory to the repo
 git commit -m "Message" -> The lavel of the update or change you are uploading
 
 git push origin master -> To upload your update to your repo
+
+*More commands
+To download repo
+
+git clone "url" -> Clones the repo info in the current directory into a directory
+git clone "url" .-> Clones the repo info in the current directory
+
+rm -rf "Directory" -> Removes the directory
+rm -rf * -> Removes all
+
+cd .. -> Go back
+
+*For changes
+git status -> Check changes
+git diff -> Check the differences between new and old version of the file
+*To go out from the git diff, use ":q"

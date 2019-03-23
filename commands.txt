@@ -11,6 +11,9 @@ git status-> If exist any change (red coloured)
 git add . -> Add everything in the directory to the repo
 git commit -m "Message" -> The lavel of the update or change you are uploading
 
+git pull origin master -> Download the copy of the updated version of the repo (use it to evade errors)
+*If screen goes black, then press ":wq"
+
 git push origin master -> To upload your update to your repo
 
 *More commands
@@ -28,3 +31,4 @@ cd .. -> Go back
 git status -> Check changes
 git diff -> Check the differences between new and old version of the file
 *To go out from the git diff, use ":q"
+

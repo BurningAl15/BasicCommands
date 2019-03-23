@@ -1,0 +1,8 @@
+mkdir ...-> create directories
+cd ...->Enter to a directory
+ls -> list directory content
+
+git init -> Init .git directory
+git remote add origin ... -> Add origin to the initialized directory
+git status-> If exist any change (red coloured)
+git add . -> Add everything in the directory to the repo

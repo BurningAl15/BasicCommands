@@ -1,0 +1,6 @@
+﻿  MainGame.cpp
+  main.cpp
+  Generando código...
+  GLSProgram.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+MainGame.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000018) para 'SDL_Window'; no se puede ejecutar la imagen
+  Motor.vcxproj -> C:\Users\Aldair\Documents\GameEngineFundamentals\Fundamentos201901\Proyectos\Debug\Motor.exe

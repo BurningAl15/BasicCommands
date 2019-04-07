@@ -1,6 +1,8 @@
 #pragma once
 #include<SDL\SDL.h>
 #include <GL\glew.h>
+#include "Sprite.h"
+#include "GLSProgram.h"
 
 //State machine to know the state of the game
 //Normally a game is in a infinite loop
@@ -15,14 +17,17 @@ private:
 	//Width and height for window
 	int width;
 	int height;
+	Sprite sprite;
+	GLSProgram glsProgram;
 	//Pointing to a window
-	SDL_Window*window; 
+	SDL_Window*window;
 	void init();
+	void initShaders();
 public:
 	MainGame();
 	GameState gameState;
 	~MainGame();
-
+	
 	void run();
 	void draw();
 	void update();

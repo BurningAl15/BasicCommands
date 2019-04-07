@@ -1,4 +1,5 @@
 #include "MainGame.h"
+#include "GL/glew.h"
 #include <iostream>
 using namespace std;
 
@@ -36,15 +37,14 @@ void MainGame::init() {
 	if (window == nullptr) {
 		//secayo
 	}
-
 	SDL_GLContext glContext =
 		SDL_GL_CreateContext(window);
 	
-	/*GLenum error = glewInit();
+	GLenum error = glewInit();
 	if (error != GLEW_OK) {
 		//se cayo
-	}*/
-	
+	}
+
 	//Create the double buffer
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	//Set color in the window to blue
@@ -52,10 +52,19 @@ void MainGame::init() {
 	//(1,1,1,1) -> White
 	//(0,0,0,1) -> Black
 	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
+	initShaders();
+}
+
+void MainGame::initShaders()
+{
+	glsProgram.compileShaders("Shaders/colorShaderVert.txt"
+								, "Shaders/colorShaderFrag.txt");
+
 }
 
 void MainGame::run() {
 	init();
+	sprite.init(-1, -1, 1, 1);
 	update();
 }
 
@@ -63,6 +72,7 @@ void MainGame::draw() {
 	glClearDepth(1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	//se dibujaran los elementos en pantalla
+	sprite.draw();
 	SDL_GL_SwapWindow(window);
 }
 
@@ -93,15 +103,11 @@ void MainGame::processInput()
 				<< endl;
 			mousePress(event.button);
 			break;
-		case SDL_MOUSEMOTION:
-			//If you move mouse over the window, then the position 
-			//becomes an output in format (pos X: xVal,pos Y: yVal)
-		
-			//cout
-			//	<< "pos x " << event.motion.x
-			//	<< " pos y " << event.motion.y
-			//	<< endl;
-			break;
+		/*case SDL_MOUSEMOTION:
+			cout
+				<< "pos x " << event.motion.x
+				<< " pos y " << event.motion.y;
+			break;*/
 		}
 	}
 }
@@ -112,11 +118,10 @@ void MainGame::mousePress(SDL_MouseButtonEvent& button)
 	//Thinking in improve this to gamepad use
 	if (button.button == SDL_BUTTON_LEFT)
 	{
-		cout<<"Im left"<< endl;
+		cout << "Im left" << endl;
 	}
 	else if (button.button == SDL_BUTTON_RIGHT)
 	{
-		cout<< "Im right"<< endl;
+		cout << "Im right" << endl;
 	}
 }
-
